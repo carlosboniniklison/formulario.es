@@ -81,8 +81,9 @@
             <h1 class="mb-4">Agente Digitalizador en Málaga</h1>
             <p class="text-lg mb-5">¿Sabía que PyMes y Autónomos disponen de un BONO DIGITAL para su transformación
               digital?</p>
-
-            <a href="#contacto" class="btn btn-primary btn-split ml-2">Contáctenos <div class="fab"><span
+            <a href="https://red.es/es/iniciativas/proyectos/kit-digital" target="blank"
+              class="btn btn-outline border text-secondary">Info Kit Digital</a>
+            <a href="#" class="btn btn-primary btn-split ml-2">Contáctenos <div class="fab"><span
                   class="mai-play"></span></div></a>
           </div>
           <div class="col-lg-6 py-3 wow zoomIn">
@@ -198,10 +199,10 @@
         <div class="wow fadeInUp">
           <div class="subhead">¿En qué podemos ayudarle?</div>
           <h2 class="title-section">Todos los <span class="marked">Servicios</span> y Soluciones</h2>
-
+          <a href="https://www.acelerapyme.gob.es/kit-digital/soluciones-digitales" target="blank"
+            class="btn btn-outline border text-secondary">Info Importes x Soluciones</a>
         </div>
         <div class="owl-carousel wow fadeInUp" id="testimonials">
-
           <div class="item">
             <div class="row align-items-center">
               <div class="col-md-6 py-3">
@@ -467,19 +468,7 @@
             <div class="subhead">contacto</div>
             <h2 class="title-section">Para más información:</h2>
             <div class="divider"></div>
-            <?php
-if(isset($_POST["SubmitBtn"])){
 
-$to = "info@cenecmalaga.com";
-$subject = "Agente Digitalizador contacto WEB";
-$from=$_POST["email"];
-$msg=$_POST["msg"];
-$headers = "From: $from";
-
-mail($to,$subject,$msg,$headers);
-echo "Email successfully sent.";
-}
-?>
             <form action="#">
               <div class="py-2">
                 <input type="text" class="form-control" placeholder="Nombre y Apellido">
@@ -488,9 +477,9 @@ echo "Email successfully sent.";
                 <input type="text" class="form-control" placeholder="Email">
               </div>
               <div class="py-2">
-                <textarea name="msg" cols="45" rows="5" id="msg" class="form-control" placeholder="Empresa y breve descripción"></textarea>
+                <textarea rows="6" class="form-control" placeholder="Empresa y breve descripción"></textarea>
               </div>
-              <input name="SubmitBtn" type="submit" id="SubmitBtn" value="Enviar Mensaje" class="btn btn-primary rounded-pill mt-4">
+              <button type="submit" class="btn btn-primary rounded-pill mt-4">Enviar Mensaje</button>
             </form>
           </div>
         </div>
@@ -509,11 +498,21 @@ echo "Email successfully sent.";
         </div>
         <div class="col-lg-3 py-3">
           <h5>Programa Kit Digital</h5>
-
+          <ul class="footer-menu">
+            <li><a target="_blank" title="Conoce el Programa" class="btn btn-outline border text-secondary"
+                href="https://www.acelerapyme.gob.es/kit-digital">
+                Acelera pyme
+              </a></li>
+          </ul>
         </div>
         <div class="col-lg-3 py-3">
           <h5>Programa Acelera pyme</h5>
-
+          <ul class="footer-menu">
+            <li><a target="_blank" title="Portal Oficial" class="btn btn-outline border text-secondary"
+                href="https://www.acelerapyme.gob.es/">
+                Red.es
+              </a></li>
+          </ul>
         </div>
         <div class="col-lg-3 py-3">
           <h5>Partner Tecnológico</h5>
@@ -536,8 +535,7 @@ echo "Email successfully sent.";
 
       <div class="row">
         <div class="col-sm-6 py-2">
-          <p id="copyright"><a rel="nofollow" href="enlaces.html">&copy;</a> 2022 Nutecfor</a>. Todos los derechos
-            reservados</p>
+          <p id="copyright"><a href="index.html">&copy;</a> 2022 Nutecfor. Todos los derechos reservados</p>
         </div>
         <div class="col-sm-6 py-2 text-right">
           <div class="d-inline-block px-3">
