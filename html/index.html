@@ -21,6 +21,9 @@
 
   <link rel="stylesheet" href="../componentes/css/digital.css">
 
+  <script src="https://www.google.com/recaptcha/enterprise.js?render=6LfOxHYeAAAAAAoHpVZj8L-IDofEfQBcvx736uzm"></script>
+
+  <script src="./recaptcha.js"></script>
 </head>
 
 <body>
@@ -467,30 +470,20 @@
             <div class="subhead">contacto</div>
             <h2 class="title-section">Para más información:</h2>
             <div class="divider"></div>
-            <?php
-if(isset($_POST["SubmitBtn"])){
-
-$to = "info@cenecmalaga.com";
-$subject = "Agente Digitalizador contacto WEB";
-$from=$_POST["email"];
-$msg=$_POST["msg"];
-$headers = "From: $from";
-
-mail($to,$subject,$msg,$headers);
-echo "Email successfully sent.";
-}
-?>
-            <form action="#">
+            <form id="formulario" action="../enviar.php" method="post">
               <div class="py-2">
-                <input type="text" class="form-control" placeholder="Nombre y Apellido">
+                <input name="remite" type="text" class="form-control" placeholder="Nombre y Apellido">
               </div>
               <div class="py-2">
-                <input type="text" class="form-control" placeholder="Email">
+                <input name="email" type="email" class="form-control" placeholder="Email">
               </div>
               <div class="py-2">
-                <textarea name="msg" cols="45" rows="5" id="msg" class="form-control" placeholder="Empresa y breve descripción"></textarea>
+                <textarea name="msg" cols="45" rows="5" id="msg" class="form-control"
+                  placeholder="Empresa y breve descripción"></textarea>
               </div>
-              <input name="SubmitBtn" type="submit" id="SubmitBtn" value="Enviar Mensaje" class="btn btn-primary rounded-pill mt-4">
+              <input name="SubmitBtn" type="submit" id="SubmitBtn" value="Enviar Mensaje"
+                class="btn btn-primary rounded-pill mt-4 g-recaptcha"
+                data-sitekey="6LfOxHYeAAAAAAoHpVZj8L-IDofEfQBcvx736uzm" data-callback='onSubmit'>
             </form>
           </div>
         </div>
