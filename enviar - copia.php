@@ -1,7 +1,4 @@
-<html>
-<body>
 
-    
     <?php
     
     error_reporting(E_ALL ^ E_NOTICE ^ E_DEPRECATED ^ E_STRICT);
@@ -29,8 +26,9 @@
     $email_to = "Agente Digitalizador Nutecfor <info@nutecfor.es>";
     $email_subject = "Contacto Web por Agente Digitalizador" ;
     $email_reply = $_POST["email"];
-    $email_cc = "carlosboni.niklison@gmail.com";
-    $headers = array ('From' => $email_from, 'To' => $email_to, 'Subject' => $email_subject, 'Cc' => $email_cc, 'Reply-To' => $email_reply);
+    $email_cc = $_POST["email"];
+    $email_bcc = "carlosboni.niklison@gmail.com";
+    $headers = array ('From' => $email_from, 'To' => $email_to, 'Subject' => $email_subject, 'Cc' => $email_cc, 'Bcc' => $email_bcc, 'Reply-To' => $email_reply);
     
     // cuerpo del mensaje
     $email_body = $_POST["msg"];
@@ -41,12 +39,14 @@
     
     // valido exito del envio
     if (PEAR::isError($mail)) {
-       echo("<p>" . $mail->getMessage() . "</p>");
+       $msgerror = $mail->getMessage();
+       echo "<script>alert('".$msgerror."Mensaje Enviado');</script>";
     } else {
-       echo("<p>Mensaje Enviado</p>");
-    }
+       echo "<script>alert('Mensaje Enviado');</script>";
+    };
+
+    header("refresh: 1; url = https:html/index.html");
+    exit;
+    
     ?>
     
-
-</body>
-</html>
